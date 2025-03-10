@@ -36,8 +36,11 @@ Here's a walkthrough of implemented required features:
 
 
 
+
+
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ...
+<img src = 'https://imgur.com/a/aI3eHUi'
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 
