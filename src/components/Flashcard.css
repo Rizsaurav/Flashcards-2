@@ -1,0 +1,71 @@
+.flashcard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Streak Counter */
+.streaks {
+  font-weight: bold;
+  display: flex;
+  gap: 15px;
+  font-size: 1rem;
+}
+
+.flashcard {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.flashcard.flipped {
+  background: rgba(255, 255, 255, 0.5);
+  transform: rotateY(0deg); /* Fix: No text inversion */
+}
+
+/* Answer Section */
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.feedback {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Button Styles */
+.controls button, .answer-section button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover, .answer-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Mastered Button */
+.mastered-btn {
+  background-color: #28a745 !important;
+}
+
+.mastered-btn:hover {
+  background-color: #218838 !important;
+}
