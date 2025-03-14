@@ -32,15 +32,9 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 
 
-img src = 'https://imgur.com/a/KBo2fDB'
+img src = '['https://imgur.com/a/KBo2fDB'](https://imgur.com/gallery/flashcards-p7N5Gk1)'
 
-
-
-
-
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...
+Alternate Link ...
 <img src = 'https://imgur.com/a/tW5KI2b'
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
