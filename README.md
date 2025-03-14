@@ -35,7 +35,7 @@ Here's a walkthrough of implemented required features:
 img src = '['https://imgur.com/a/KBo2fDB'](https://imgur.com/gallery/flashcards-p7N5Gk1)'
 
 Alternate Link ...
-<img src = 'https://imgur.com/a/tW5KI2b'
+img src = 'https://imgur.com/gallery/flashcards-p7N5Gk1'
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 
