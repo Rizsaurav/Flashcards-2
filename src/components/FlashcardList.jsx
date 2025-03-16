@@ -13,10 +13,12 @@ const FlashcardList = () => {
   const [index, setIndex] = useState(0);
   const [currentStreak, setCurrentStreak] = useState(0);
   const [longestStreak, setLongestStreak] = useState(0);
+  const [masteredCards, setMasteredCards] = useState([]);
 
-  // ✅ Shuffle WITHOUT affecting answers
+  // Shuffle WITHOUT including mastered cards
   const shuffleCards = () => {
-    setFlashcards([...flashcards].sort(() => Math.random() - 0.5));
+    const unmastered = flashcards.filter((card) => !masteredCards.includes(card.id));
+    setFlashcards([...unmastered].sort(() => Math.random() - 0.5));
     setIndex(0);
   };
 
@@ -41,17 +43,31 @@ const FlashcardList = () => {
     });
   };
 
+  // ✅ Mark card as mastered
+  const markAsMastered = (id) => {
+    setMasteredCards((prev) => [...prev, id]);
+    setFlashcards((prevCards) => prevCards.filter((card) => card.id !== id));
+    nextCard();
+  };
+
   return (
-    <Flashcard
-      question={flashcards[index].question}
-      answer={flashcards[index].answer}
-      onShuffle={shuffleCards}
-      onNext={nextCard}
-      onPrevious={prevCard}
-      updateStreak={updateStreak}
-      currentStreak={currentStreak}
-      longestStreak={longestStreak}
-    />
+    <>
+      {flashcards.length > 0 ? (
+        <Flashcard
+          question={flashcards[index].question}
+          answer={flashcards[index].answer}
+          onShuffle={shuffleCards}
+          onNext={nextCard}
+          onPrevious={prevCard}
+          updateStreak={updateStreak}
+          currentStreak={currentStreak}
+          longestStreak={longestStreak}
+          markAsMastered={() => markAsMastered(flashcards[index].id)}
+        />
+      ) : (
+        <p>🎉 You have mastered all flashcards!</p>
+      )}
+    </>
   );
 };
 

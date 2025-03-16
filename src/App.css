@@ -16,6 +16,23 @@ body {
   backdrop-filter: blur(10px);
 }
 
-h1 {
-  color: #333;
+/* Add transition for smoother UI */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Highlight mastered flashcards */
+.mastered {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Ensure mastered cards look different */
+.flashcard.mastered {
+  background: #d3d3d3;
+  color: #777;
 }

@@ -13,33 +13,127 @@
   font-size: 1rem;
 }
 
+/* Flashcard Wrapper */
 .flashcard {
   width: 300px;
   height: 200px;
+  border-radius: 10px;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: background 0.6s ease-in-out; 
+  background-color: var(--card-color, rgba(255, 255, 255, 0.2)); 
+}
+
+
+/* Front & Back */
+.flashcard .front,
+.flashcard .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 1.5rem;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
+  transition: transform 0.6s ease-in-out;
+  transform-origin: center;
+  backface-visibility: hidden;
 }
 
-.flashcard.flipped {
-  background: rgba(255, 255, 255, 0.5);
-  transform: rotateY(0deg); /* Fix: No text inversion */
+/* Default State - Show Front */
+.flashcard .front {
+  transform: rotateY(0deg);
 }
 
-/* Answer Section */
-.answer-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  margin-top: 10px;
+/* Back of Flashcard */
+.flashcard .back {
+  transform: rotateY(180deg);
+}
+
+/* Flip Effect */
+.flashcard.flipped .front {
+  transform: rotateY(-180deg);
+}
+
+.flashcard.flipped .back {
+  transform: rotateY(0deg);
+}
+
+/* Mastered Cards - Faded */
+.mastered {
+  opacity: 0.5;
+  pointer-events: none;
+  background: #ccc;
+}
+
+/* Mastered List */
+.mastered-list {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.mastered-list h2 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Correct and Incorrect Answer Feedback */
+.correct-answer {
+  border: 2px solid green;
+  color: green;
+  animation: correctAnim 0.5s ease-in-out;
+}
+
+.wrong-answer {
+  border: 2px solid red;
+  color: red;
+  animation: wrongAnim 0.5s ease-in-out;
+}
+
+@keyframes correctAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wrongAnim {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(0); }
+}
+
+/* Flip Animation */
+@keyframes flipIn {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes flipOut {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+
+/* Flashcard Animation */
+.flashcard.flipped .front {
+  animation: flipOut 0.6s ease-in-out;
+}
+
+.flashcard.flipped .back {
+  animation: flipIn 0.6s ease-in-out;
 }
 
 .feedback {
