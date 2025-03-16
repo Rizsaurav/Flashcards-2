@@ -1,10 +1,10 @@
-# Web Development Project 2 - *flashcards*
+# Web Development Project 2 - *Flashcards - 2*
 
 Submitted by: **Saurav Rijal**
 
-This web app: **Has Flashcards that shows streaks of correct guesses.**
+This web app: **The Flashcards Study App is an interactive learning tool that allows users to flip flashcards, enter answers, and track their streaks while studying. Users can shuffle cards, navigate through them, and mark learned cards as "Mastered" to focus only on what they need to review. Built with React.js, the app provides a smooth and engaging experience for efficient memorization and self-testing.**
 
-Time spent: **8** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
@@ -25,20 +25,21 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] List anything else that you added to improve the site's functionality!
-- Added icons
+* [x]  Mastered Cards System – Users can mark cards as mastered, removing them from active review while keeping a reference list.
+* [x]  Fuzzy Answer Matching – Answers are checked with case insensitivity and slight variations allowed for more flexible learning.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
+<img src='[http://i.imgur.com/link/to/your/gif/file.gif](https://imgur.com/a/TG5wUi1)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-img src = '['https://imgur.com/a/KBo2fDB'](https://imgur.com/gallery/flashcards-p7N5Gk1)'
-
-Alternate Link ...
-img src = 'https://imgur.com/gallery/flashcards-p7N5Gk1'
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with ...  
 <!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-
+[[Kap](https://getkap.co/) for macOS](https://imgur.com/a/TG5wUi1)
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
